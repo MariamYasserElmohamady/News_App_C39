@@ -29,7 +29,7 @@ class NewsSourcesFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         viewBinding = FragmentNewsSourcesBinding.inflate(
             inflater,
             container,
@@ -104,13 +104,13 @@ class NewsSourcesFragment : Fragment() {
                 }
 
                 override fun onTabUnselected(tab: TabLayout.Tab?) {
-                    // refresh
-                    val source = tab?.tag as Source
-                    newsFragment.changeSource(source)
+
                 }
 
                 override fun onTabReselected(tab: TabLayout.Tab?) {
-
+                    // refresh
+                    val source = tab?.tag as Source
+                    newsFragment.changeSource(source)
                 }
 
             })

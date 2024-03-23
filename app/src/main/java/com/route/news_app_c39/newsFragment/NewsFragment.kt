@@ -25,7 +25,7 @@ class NewsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         viewBinding = FragmentNewsBinding.inflate(
             inflater,
             container,
@@ -67,7 +67,7 @@ class NewsFragment : Fragment() {
         viewModal.loadNews(source)
     }
 
-    val adapter = NewsAdapter(null)
+    val adapter = NewsAdapter(emptyList())
 
     private fun showNewsList(articles: List<Article?>?) {
         adapter.changeData(articles)

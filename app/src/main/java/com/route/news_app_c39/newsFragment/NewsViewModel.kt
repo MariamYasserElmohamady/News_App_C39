@@ -28,7 +28,7 @@ class NewsViewModel :ViewModel() {
                         call: Call<NewsResponse>,
                         response: Response<NewsResponse>
                     ) {
-                        isLoadingVisible
+                        isLoadingVisible.value =false
                         if (response.isSuccessful){
                             newsLiveData.value =(response.body()?.articles)
                             return
